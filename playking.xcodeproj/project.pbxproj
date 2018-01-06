@@ -1,0 +1,841 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20E328AAFB5269A1913B488C /* Pods_playkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9BC969467F1253AEB129F7 /* Pods_playkingTests.framework */; };
+		6DCA3FCAD36CD133A951DA01 /* Pods_playking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1429DC9AD6294571C988FC8A /* Pods_playking.framework */; };
+		8909509D1FD57FD1008B04B6 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909509C1FD57FD1008B04B6 /* Const.swift */; };
+		8909509F1FD58084008B04B6 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909509E1FD58084008B04B6 /* Util.swift */; };
+		8986E0451FF52B8400943A82 /* WChoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986E0441FF52B8400943A82 /* WChoiceController.swift */; };
+		8986E0471FF533DD00943A82 /* ActingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986E0461FF533DD00943A82 /* ActingController.swift */; };
+		89C1E2C61FCC24A600196BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C1E2C51FCC24A600196BA9 /* AppDelegate.swift */; };
+		89C1E2CB1FCC24A600196BA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C1E2C91FCC24A600196BA9 /* Main.storyboard */; };
+		89C1E2CD1FCC24A600196BA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C1E2CC1FCC24A600196BA9 /* Assets.xcassets */; };
+		89C1E2D01FCC24A600196BA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C1E2CE1FCC24A600196BA9 /* LaunchScreen.storyboard */; };
+		89C1E2DB1FCC24A600196BA9 /* playkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C1E2DA1FCC24A600196BA9 /* playkingTests.swift */; };
+		89C1E2E61FCC24A600196BA9 /* playkingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C1E2E51FCC24A600196BA9 /* playkingUITests.swift */; };
+		EC7BAC3F680CD29DD1C1C084 /* Pods_playkingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1564F33C628B794E0EBE0481 /* Pods_playkingUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89C1E2D71FCC24A600196BA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89C1E2BA1FCC24A600196BA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89C1E2C11FCC24A600196BA9;
+			remoteInfo = playking;
+		};
+		89C1E2E21FCC24A600196BA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89C1E2BA1FCC24A600196BA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89C1E2C11FCC24A600196BA9;
+			remoteInfo = playking;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02AE8B1857FBCB572B98B1F8 /* Pods-playkingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playkingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-playkingUITests/Pods-playkingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1429DC9AD6294571C988FC8A /* Pods_playking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_playking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1564F33C628B794E0EBE0481 /* Pods_playkingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_playkingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C23CB378FC5FD3C35C9A488 /* Pods-playkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playkingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-playkingTests/Pods-playkingTests.release.xcconfig"; sourceTree = "<group>"; };
+		848931F67042DE50BC7FC102 /* Pods-playkingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playkingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-playkingUITests/Pods-playkingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8909509C1FD57FD1008B04B6 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		8909509E1FD58084008B04B6 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		8986E0441FF52B8400943A82 /* WChoiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WChoiceController.swift; sourceTree = "<group>"; };
+		8986E0461FF533DD00943A82 /* ActingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActingController.swift; sourceTree = "<group>"; };
+		89C1E2C21FCC24A600196BA9 /* playking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89C1E2C51FCC24A600196BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		89C1E2CA1FCC24A600196BA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		89C1E2CC1FCC24A600196BA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		89C1E2CF1FCC24A600196BA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89C1E2D11FCC24A600196BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89C1E2D61FCC24A600196BA9 /* playkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = playkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89C1E2DA1FCC24A600196BA9 /* playkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playkingTests.swift; sourceTree = "<group>"; };
+		89C1E2DC1FCC24A600196BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89C1E2E11FCC24A600196BA9 /* playkingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = playkingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89C1E2E51FCC24A600196BA9 /* playkingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playkingUITests.swift; sourceTree = "<group>"; };
+		89C1E2E71FCC24A600196BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91463ADC60BE31802ADE12CE /* Pods-playking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-playking/Pods-playking.debug.xcconfig"; sourceTree = "<group>"; };
+		AF97BC6A59029305558A7A25 /* Pods-playking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playking.release.xcconfig"; path = "Pods/Target Support Files/Pods-playking/Pods-playking.release.xcconfig"; sourceTree = "<group>"; };
+		F7BBCC8D094EFD0970233A5A /* Pods-playkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playkingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-playkingTests/Pods-playkingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB9BC969467F1253AEB129F7 /* Pods_playkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_playkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		89C1E2BF1FCC24A600196BA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DCA3FCAD36CD133A951DA01 /* Pods_playking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89C1E2D31FCC24A600196BA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20E328AAFB5269A1913B488C /* Pods_playkingTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89C1E2DE1FCC24A600196BA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7BAC3F680CD29DD1C1C084 /* Pods_playkingUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		412F2ED5613FC14A396A41A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1429DC9AD6294571C988FC8A /* Pods_playking.framework */,
+				FB9BC969467F1253AEB129F7 /* Pods_playkingTests.framework */,
+				1564F33C628B794E0EBE0481 /* Pods_playkingUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		890950941FD57E71008B04B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8986E0441FF52B8400943A82 /* WChoiceController.swift */,
+				8986E0461FF533DD00943A82 /* ActingController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		890950951FD57E84008B04B6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		890950961FD57E95008B04B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		890950971FD57E9F008B04B6 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				890950981FD57EA5008B04B6 /* images */,
+				890950991FD57EB2008B04B6 /* sounds */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		890950981FD57EA5008B04B6 /* images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		890950991FD57EB2008B04B6 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = sounds;
+			sourceTree = "<group>";
+		};
+		8909509A1FD57EC3008B04B6 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				8909509C1FD57FD1008B04B6 /* Const.swift */,
+				8909509E1FD58084008B04B6 /* Util.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		8909509B1FD57ED3008B04B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				89C1E2CE1FCC24A600196BA9 /* LaunchScreen.storyboard */,
+				89C1E2C91FCC24A600196BA9 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		89C1E2B91FCC24A600196BA9 = {
+			isa = PBXGroup;
+			children = (
+				89C1E2C31FCC24A600196BA9 /* Products */,
+				89C1E2C41FCC24A600196BA9 /* playking */,
+				89C1E2D91FCC24A600196BA9 /* playkingTests */,
+				89C1E2E41FCC24A600196BA9 /* playkingUITests */,
+				C38926EC97925EBE34EAD1EE /* Pods */,
+				412F2ED5613FC14A396A41A2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		89C1E2C31FCC24A600196BA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89C1E2C21FCC24A600196BA9 /* playking.app */,
+				89C1E2D61FCC24A600196BA9 /* playkingTests.xctest */,
+				89C1E2E11FCC24A600196BA9 /* playkingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		89C1E2C41FCC24A600196BA9 /* playking */ = {
+			isa = PBXGroup;
+			children = (
+				890950941FD57E71008B04B6 /* Controller */,
+				890950951FD57E84008B04B6 /* Extension */,
+				890950961FD57E95008B04B6 /* Model */,
+				890950971FD57E9F008B04B6 /* Resource */,
+				8909509A1FD57EC3008B04B6 /* Util */,
+				8909509B1FD57ED3008B04B6 /* View */,
+				89C1E2C51FCC24A600196BA9 /* AppDelegate.swift */,
+				89C1E2CC1FCC24A600196BA9 /* Assets.xcassets */,
+				89C1E2D11FCC24A600196BA9 /* Info.plist */,
+			);
+			path = playking;
+			sourceTree = "<group>";
+		};
+		89C1E2D91FCC24A600196BA9 /* playkingTests */ = {
+			isa = PBXGroup;
+			children = (
+				89C1E2DC1FCC24A600196BA9 /* Info.plist */,
+				89C1E2DA1FCC24A600196BA9 /* playkingTests.swift */,
+			);
+			path = playkingTests;
+			sourceTree = "<group>";
+		};
+		89C1E2E41FCC24A600196BA9 /* playkingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				89C1E2E71FCC24A600196BA9 /* Info.plist */,
+				89C1E2E51FCC24A600196BA9 /* playkingUITests.swift */,
+			);
+			path = playkingUITests;
+			sourceTree = "<group>";
+		};
+		C38926EC97925EBE34EAD1EE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91463ADC60BE31802ADE12CE /* Pods-playking.debug.xcconfig */,
+				AF97BC6A59029305558A7A25 /* Pods-playking.release.xcconfig */,
+				F7BBCC8D094EFD0970233A5A /* Pods-playkingTests.debug.xcconfig */,
+				4C23CB378FC5FD3C35C9A488 /* Pods-playkingTests.release.xcconfig */,
+				02AE8B1857FBCB572B98B1F8 /* Pods-playkingUITests.debug.xcconfig */,
+				848931F67042DE50BC7FC102 /* Pods-playkingUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		89C1E2C11FCC24A600196BA9 /* playking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89C1E2EA1FCC24A600196BA9 /* Build configuration list for PBXNativeTarget "playking" */;
+			buildPhases = (
+				FFB8EA61CDFB7CBDE24346AF /* [CP] Check Pods Manifest.lock */,
+				89C1E2BE1FCC24A600196BA9 /* Sources */,
+				89C1E2BF1FCC24A600196BA9 /* Frameworks */,
+				89C1E2C01FCC24A600196BA9 /* Resources */,
+				DAFE7DCE43F1E3D853D2553D /* [CP] Embed Pods Frameworks */,
+				D295DDD8569C4C88AD96FBA3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = playking;
+			productName = playking;
+			productReference = 89C1E2C21FCC24A600196BA9 /* playking.app */;
+			productType = "com.apple.product-type.application";
+		};
+		89C1E2D51FCC24A600196BA9 /* playkingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89C1E2ED1FCC24A600196BA9 /* Build configuration list for PBXNativeTarget "playkingTests" */;
+			buildPhases = (
+				F9CEEFC2591800DD896D0D91 /* [CP] Check Pods Manifest.lock */,
+				89C1E2D21FCC24A600196BA9 /* Sources */,
+				89C1E2D31FCC24A600196BA9 /* Frameworks */,
+				89C1E2D41FCC24A600196BA9 /* Resources */,
+				EDE80C25DEAB96C572373FCE /* [CP] Embed Pods Frameworks */,
+				1E8FB6908A0F6A214E96132B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89C1E2D81FCC24A600196BA9 /* PBXTargetDependency */,
+			);
+			name = playkingTests;
+			productName = playkingTests;
+			productReference = 89C1E2D61FCC24A600196BA9 /* playkingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		89C1E2E01FCC24A600196BA9 /* playkingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89C1E2F01FCC24A600196BA9 /* Build configuration list for PBXNativeTarget "playkingUITests" */;
+			buildPhases = (
+				0F1EF36D88141D6A8646D4A2 /* [CP] Check Pods Manifest.lock */,
+				89C1E2DD1FCC24A600196BA9 /* Sources */,
+				89C1E2DE1FCC24A600196BA9 /* Frameworks */,
+				89C1E2DF1FCC24A600196BA9 /* Resources */,
+				805C9921D595485E2A81C907 /* [CP] Embed Pods Frameworks */,
+				4F0AC115639B7B49EDC3FC84 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89C1E2E31FCC24A600196BA9 /* PBXTargetDependency */,
+			);
+			name = playkingUITests;
+			productName = playkingUITests;
+			productReference = 89C1E2E11FCC24A600196BA9 /* playkingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		89C1E2BA1FCC24A600196BA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Yusuke Hashimoto";
+				TargetAttributes = {
+					89C1E2C11FCC24A600196BA9 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					89C1E2D51FCC24A600196BA9 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 89C1E2C11FCC24A600196BA9;
+					};
+					89C1E2E01FCC24A600196BA9 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 89C1E2C11FCC24A600196BA9;
+					};
+				};
+			};
+			buildConfigurationList = 89C1E2BD1FCC24A600196BA9 /* Build configuration list for PBXProject "playking" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 89C1E2B91FCC24A600196BA9;
+			productRefGroup = 89C1E2C31FCC24A600196BA9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				89C1E2C11FCC24A600196BA9 /* playking */,
+				89C1E2D51FCC24A600196BA9 /* playkingTests */,
+				89C1E2E01FCC24A600196BA9 /* playkingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		89C1E2C01FCC24A600196BA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89C1E2D01FCC24A600196BA9 /* LaunchScreen.storyboard in Resources */,
+				89C1E2CD1FCC24A600196BA9 /* Assets.xcassets in Resources */,
+				89C1E2CB1FCC24A600196BA9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89C1E2D41FCC24A600196BA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89C1E2DF1FCC24A600196BA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F1EF36D88141D6A8646D4A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-playkingUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E8FB6908A0F6A214E96132B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-playkingTests/Pods-playkingTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F0AC115639B7B49EDC3FC84 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-playkingUITests/Pods-playkingUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		805C9921D595485E2A81C907 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-playkingUITests/Pods-playkingUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D295DDD8569C4C88AD96FBA3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-playking/Pods-playking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAFE7DCE43F1E3D853D2553D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-playking/Pods-playking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDE80C25DEAB96C572373FCE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-playkingTests/Pods-playkingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9CEEFC2591800DD896D0D91 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-playkingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFB8EA61CDFB7CBDE24346AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-playking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		89C1E2BE1FCC24A600196BA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89C1E2C61FCC24A600196BA9 /* AppDelegate.swift in Sources */,
+				8986E0471FF533DD00943A82 /* ActingController.swift in Sources */,
+				8909509D1FD57FD1008B04B6 /* Const.swift in Sources */,
+				8909509F1FD58084008B04B6 /* Util.swift in Sources */,
+				8986E0451FF52B8400943A82 /* WChoiceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89C1E2D21FCC24A600196BA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89C1E2DB1FCC24A600196BA9 /* playkingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89C1E2DD1FCC24A600196BA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89C1E2E61FCC24A600196BA9 /* playkingUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		89C1E2D81FCC24A600196BA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89C1E2C11FCC24A600196BA9 /* playking */;
+			targetProxy = 89C1E2D71FCC24A600196BA9 /* PBXContainerItemProxy */;
+		};
+		89C1E2E31FCC24A600196BA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89C1E2C11FCC24A600196BA9 /* playking */;
+			targetProxy = 89C1E2E21FCC24A600196BA9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		89C1E2C91FCC24A600196BA9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89C1E2CA1FCC24A600196BA9 /* Base */,
+			);
+			name = Main.storyboard;
+			path = .;
+			sourceTree = "<group>";
+		};
+		89C1E2CE1FCC24A600196BA9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89C1E2CF1FCC24A600196BA9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = .;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		89C1E2E81FCC24A600196BA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		89C1E2E91FCC24A600196BA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		89C1E2EB1FCC24A600196BA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91463ADC60BE31802ADE12CE /* Pods-playking.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W2J4NQURN9;
+				INFOPLIST_FILE = playking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.flare-factory.playking";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		89C1E2EC1FCC24A600196BA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF97BC6A59029305558A7A25 /* Pods-playking.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W2J4NQURN9;
+				INFOPLIST_FILE = playking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.flare-factory.playking";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		89C1E2EE1FCC24A600196BA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7BBCC8D094EFD0970233A5A /* Pods-playkingTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = playkingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.flare-factory.playkingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/playking.app/playking";
+			};
+			name = Debug;
+		};
+		89C1E2EF1FCC24A600196BA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C23CB378FC5FD3C35C9A488 /* Pods-playkingTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = playkingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.flare-factory.playkingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/playking.app/playking";
+			};
+			name = Release;
+		};
+		89C1E2F11FCC24A600196BA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02AE8B1857FBCB572B98B1F8 /* Pods-playkingUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = playkingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.flare-factory.playkingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = playking;
+			};
+			name = Debug;
+		};
+		89C1E2F21FCC24A600196BA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 848931F67042DE50BC7FC102 /* Pods-playkingUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = playkingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.flare-factory.playkingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = playking;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		89C1E2BD1FCC24A600196BA9 /* Build configuration list for PBXProject "playking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89C1E2E81FCC24A600196BA9 /* Debug */,
+				89C1E2E91FCC24A600196BA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89C1E2EA1FCC24A600196BA9 /* Build configuration list for PBXNativeTarget "playking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89C1E2EB1FCC24A600196BA9 /* Debug */,
+				89C1E2EC1FCC24A600196BA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89C1E2ED1FCC24A600196BA9 /* Build configuration list for PBXNativeTarget "playkingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89C1E2EE1FCC24A600196BA9 /* Debug */,
+				89C1E2EF1FCC24A600196BA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89C1E2F01FCC24A600196BA9 /* Build configuration list for PBXNativeTarget "playkingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89C1E2F11FCC24A600196BA9 /* Debug */,
+				89C1E2F21FCC24A600196BA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 89C1E2BA1FCC24A600196BA9 /* Project object */;
+}

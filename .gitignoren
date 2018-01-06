@@ -1,0 +1,7 @@
+.bundle
+.ruby-version
+vendor/
+
+Gemfile.lock
+Podfile.lock
+Pods/
