@@ -108,8 +108,8 @@
 		890950941FD57E71008B04B6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8986E0441FF52B8400943A82 /* WChoiceController.swift */,
 				8986E0461FF533DD00943A82 /* ActingController.swift */,
+				8986E0441FF52B8400943A82 /* WChoiceController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -172,12 +172,12 @@
 		89C1E2B91FCC24A600196BA9 = {
 			isa = PBXGroup;
 			children = (
+				412F2ED5613FC14A396A41A2 /* Frameworks */,
+				C38926EC97925EBE34EAD1EE /* Pods */,
 				89C1E2C31FCC24A600196BA9 /* Products */,
 				89C1E2C41FCC24A600196BA9 /* playking */,
 				89C1E2D91FCC24A600196BA9 /* playkingTests */,
 				89C1E2E41FCC24A600196BA9 /* playkingUITests */,
-				C38926EC97925EBE34EAD1EE /* Pods */,
-				412F2ED5613FC14A396A41A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

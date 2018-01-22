@@ -13,83 +13,82 @@ import Photos
 
 class ActingController: UIViewController, AVCaptureFileOutputRecordingDelegate {
   
-  // 録画状態フラグ
-  private var recording: Bool = false
+  /* 画面共通 */
+  let scWid: CGFloat = UIScreen.main.bounds.width
+  let scHei: CGFloat = UIScreen.main.bounds.height
   
-  // ビデオのアウトプット
-  private var myVideoOutput: AVCaptureMovieFileOutput!
+  /* 動画撮影 */
+  var recording: Bool = false // 録画状態フラグ
+  var myVideoOutput: AVCaptureMovieFileOutput! // ビデオのアウトプット
+  var myVideoLayer: AVCaptureVideoPreviewLayer! // ビデオレイヤー
+  var button: UIButton! // 撮影ボタン
   
-  // ビデオレイヤー
-  private var myVideoLayer: AVCaptureVideoPreviewLayer!
-  
-  // ボタン
-  private var button: UIButton!
+  /* タイマー */
+  var actingTime : Int = 3 // 演技時間
+  var timer : Timer!
+  var timeLabel: UILabel! // タイマー表示
+  var startTime:Double = 0.0 // 開始時刻
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    /* 動画撮影 */
+    let session = AVCaptureSession() // セッションの作成
+    let myImageOutput = AVCapturePhotoOutput() // 出力先の生成
     
-    // セッションの作成
-    let session = AVCaptureSession()
-    
-    // 出力先を生成
-    let myImageOutput = AVCapturePhotoOutput()
-    
-    // バックカメラを取得
-    let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back)
+    let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back) // バックカメラの取得
     let videoInput = try! AVCaptureDeviceInput.init(device: camera!)
+    session.addInput(videoInput) // ビデオをセッションのInputに追加
     
-    // ビデオをセッションのInputに追加
-    session.addInput(videoInput)
-    
-    // マイクを取得
-    let mic = AVCaptureDevice.default(.builtInMicrophone, for: AVMediaType.audio, position: .unspecified)
+    let mic = AVCaptureDevice.default(.builtInMicrophone, for: AVMediaType.audio, position: .unspecified) // マイク取得
     let audioInput = try! AVCaptureDeviceInput.init(device: mic!)
+    session.addInput(audioInput) // オーディオをセッションに追加
     
-    // オーディオをセッションに追加
-    session.addInput(audioInput)
-    
-    // セッションに追加
-    session.addOutput(myImageOutput)
-    
-    // 動画の保存
-    myVideoOutput = AVCaptureMovieFileOutput()
-    
-    // ビデオ出力をOutputに追加
-    session.addOutput(myVideoOutput)
+    session.addOutput(myImageOutput) // セッションに追加
+    myVideoOutput = AVCaptureMovieFileOutput() // 動画の保存
+    session.addOutput(myVideoOutput) // ビデオ出力をOutputに追加
     
     // 画像を表示するレイヤーを生成
     myVideoLayer = AVCaptureVideoPreviewLayer.init(session: session)
     myVideoLayer?.frame = self.view.bounds
     myVideoLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-    
-    // Viewに追加
-    self.view.layer.addSublayer(myVideoLayer!)
+    self.view.layer.addSublayer(myVideoLayer!) // Viewに追加
     
     // セッション開始.
     session.startRunning()
     
-    // UI
+    // ボタン作成
     button = UIButton(frame: CGRect(x: 0, y: 0, width: 120, height: 50))
     button.backgroundColor = .red
     button.layer.masksToBounds = true
     button.setTitle("START", for: .normal)
     button.layer.cornerRadius = 20.0
-    button.layer.position = CGPoint(x: self.view.bounds.width/2, y:self.view.bounds.height-50)
+    button.layer.position = CGPoint(x: scWid/2, y: scHei-50)
     button.addTarget(self, action: #selector(ActingController.onTapButton), for: .touchUpInside)
     self.view.addSubview(button)
+    
+    // タイマーラベル作成
+    timeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 100))
+    timeLabel.backgroundColor = UIColor.orange
+    timeLabel.text = String(format: "00:%02d", actingTime)
+    timeLabel.textColor = UIColor.white
+    timeLabel.font = UIFont.boldSystemFont(ofSize: 24)
+    timeLabel.textAlignment = NSTextAlignment.center
+    timeLabel.layer.position = CGPoint(x: scWid/2, y: 200)
+    self.view.addSubview(timeLabel)
   }
   
   
   @objc internal func onTapButton(sender: UIButton){
     if (self.recording) {
-      print("stop")
       myVideoOutput.stopRecording()
       print("stop recording")
       button.isEnabled = false
       button.isHidden = true
     } else {
       print("start")
+      startTimer() // タイマー開始
+      
       let path: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
       let filePath: String = path + "/test.mov"
       let fileURL: URL = URL(fileURLWithPath: filePath)
@@ -104,18 +103,11 @@ class ActingController: UIViewController, AVCaptureFileOutputRecordingDelegate {
   
   
   
-  
-  
-  
-  
-  
   func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
     
-    print("pass fileOutput")
+    print("start fileOutput")
     // 動画URLからアセットを生成
     let videoAsset: AVURLAsset = AVURLAsset(url: outputFileURL, options: nil)
-    
-    print("pass videoAsset")
     
     // ベースとなる動画のコンポジション作成
     let mixComposition : AVMutableComposition = AVMutableComposition()
@@ -126,7 +118,6 @@ class ActingController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     let videoTrack: AVAssetTrack = videoAsset.tracks(withMediaType: AVMediaType.video)[0]
     let audioTrack: AVAssetTrack = videoAsset.tracks(withMediaType: AVMediaType.audio)[0]
     
-    print("pass getTrack")
     
     // コンポジションの設定
     try! compositionVideoTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration), of: videoTrack, at: kCMTimeZero)
@@ -135,25 +126,24 @@ class ActingController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     try! compositionAudioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration), of: audioTrack, at: kCMTimeZero)
     
     // 動画のサイズを取得
-    var videoSize: CGSize = videoTrack.naturalSize
-    var isPortrait: Bool = false
+    let videoSize: CGSize = videoTrack.naturalSize
+//    var isPortrait: Bool = false
     
-    // ビデオを縦横方向
-    if myVideoLayer.connection?.videoOrientation == .portrait {
-      isPortrait = true
-      videoSize = CGSize(width: videoSize.height, height: videoSize.width)
-    }
+    // ビデオを縦横方向 - 横にしたいのでコメントアウト
+//    if myVideoLayer.connection?.videoOrientation == .portrait {
+//      isPortrait = true
+//      videoSize = CGSize(width: videoSize.height, height: videoSize.width)
+//    }
     
-    print("pass portrait")
-    
-    // ロゴのCALayerの作成
-//    let logoImage: UIImage = UIImage(named: "logologo.png")!
+    /* ロゴのCALayerの作成
+     * timeLabelを載せて合成する
+     */
+    //    let logoImage: UIImage = UIImage(named: "logologo.png")!
     let logoLayer: CALayer = CALayer()
-//    logoLayer.contents = logoImage.cgImage
-    logoLayer.frame = CGRect(x: 5, y: 25, width: 100, height: 100)
-    logoLayer.opacity = 0.9
-    
-    print("pass layer")
+//    logoLayer.frame = CGRect(x: scWid/2, y: scHei-50, width: 200*2, height: 50*2)
+//    logoLayer.backgroundColor = UIColor.orange.cgColor
+    logoLayer.contents = timeLabel.layer
+//    logoLayer.opacity = 0.9
     
     // 親レイヤーを作成
     let parentLayer: CALayer = CALayer()
@@ -162,6 +152,8 @@ class ActingController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     videoLayer.frame = CGRect(x: 0, y: 0, width: videoSize.width, height: videoSize.height)
     parentLayer.addSublayer(videoLayer)
     parentLayer.addSublayer(logoLayer)
+    parentLayer.addSublayer(timeLabel.layer)
+
     
     // 合成用コンポジション作成
     let videoComp: AVMutableVideoComposition = AVMutableVideoComposition()
@@ -176,10 +168,10 @@ class ActingController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     instruction.layerInstructions = [layerInstruction]
     
     // 縦方向で撮影なら90度回転させる
-    if isPortrait {
-      let FirstAssetScaleFactor:CGAffineTransform = CGAffineTransform(scaleX: 1.0, y: 1.0);
-      layerInstruction.setTransform(videoTrack.preferredTransform.concatenating(FirstAssetScaleFactor), at: kCMTimeZero)
-    }
+//    if isPortrait {
+//      let FirstAssetScaleFactor:CGAffineTransform = CGAffineTransform(scaleX: 1.0, y: 1.0);
+//      layerInstruction.setTransform(videoTrack.preferredTransform.concatenating(FirstAssetScaleFactor), at: kCMTimeZero)
+//    }
     
     // インストラクションを合成用コンポジションに設定
     videoComp.instructions = [instruction]
@@ -189,10 +181,8 @@ class ActingController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     // 合成用コンポジションを設定
     assetExport?.videoComposition = videoComp
     
-    print("before export")
-    
     // エクスポートファイルの設定
-    let videoName: String = "test.mov"
+    let videoName: String = "test.mov" // ユーザーに入力させる
     let documentPath: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
     let exportPath: String = documentPath + "/" + videoName
     let exportUrl: URL = URL(fileURLWithPath: exportPath)
@@ -200,15 +190,15 @@ class ActingController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     assetExport?.outputURL = exportUrl
     assetExport?.shouldOptimizeForNetworkUse = true
     
-
+    
     // ファイルが存在している場合は削除
     if FileManager.default.fileExists(atPath: exportPath) {
       try! FileManager.default.removeItem(atPath: exportPath)
     }
-
-    print("before export")
+    
     // エクスポート実行
     assetExport?.exportAsynchronously(completionHandler: {() -> Void in
+
       // 端末に保存
       PHPhotoLibrary.shared().performChanges({
         PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: exportUrl)
@@ -219,9 +209,10 @@ class ActingController: UIViewController, AVCaptureFileOutputRecordingDelegate {
         } else {
           message = "保存に失敗しました"
         }
+        
         // アラートを表示
         DispatchQueue.main.async(execute: {
-          let alert = UIAlertController.init(title: "", message: message, preferredStyle: UIAlertControllerStyle.alert)
+          let alert = UIAlertController.init(title: "保存", message: message, preferredStyle: UIAlertControllerStyle.alert)
           let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){ (action: UIAlertAction) in
             self.button.setTitle("START", for: .normal)
             self.button.isEnabled = true
@@ -238,5 +229,57 @@ class ActingController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
+  
+  // タイマースタート
+  func startTimer() {
+    print("startTimer")
+    startTime = Date().timeIntervalSince1970
+    print("startTime: \(actingTime)")
+    let str = String(format: "00:%02d", actingTime)
+    print("str: \(str)")
+
+    // 別フォーマットの書き方
+//    let now = NSDate()
+//    let formatter = DateFormatter()
+//    formatter.dateFormat = "mm:ss"
+//    let string = formatter.string(from: now as Date)
+//    print(string)
+    
+    timeLabel.text = str
+    
+    timer = Timer.scheduledTimer(
+      timeInterval: 1.0, target: self,
+      selector: #selector(ActingController.updateLabel),
+      userInfo: nil,
+      repeats: true
+    )
+  }
+  
+  @objc func updateLabel() {
+    print("updateLabel")
+    let elapsedTime = Date().timeIntervalSince1970 - startTime
+    let flooredErapsedTime = Int(floor(elapsedTime))
+    let leftTime = Int(actingTime) - flooredErapsedTime
+    let displayString = NSString(format: "00:%02d", leftTime) as String
+    timeLabel.text = displayString
+    
+    // 残り0秒になった時の処理
+    if leftTime == 0 {
+      print("stop timer")
+      timer.invalidate()
+//      let alert = UIAlertController(title: "完了", message: "経ちました。", preferredStyle: .alert)
+//      let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//      alert.addAction(okAction)
+//      present(alert, animated: true, completion: nil)
+
+      // 撮影を止める
+      myVideoOutput.stopRecording()
+      print("stop recording")
+      button.isEnabled = false
+      button.isHidden = true
+
+    }
+  }
+  
 }
 
