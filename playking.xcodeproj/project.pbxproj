@@ -19,6 +19,8 @@
 		89C1E2D01FCC24A600196BA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C1E2CE1FCC24A600196BA9 /* LaunchScreen.storyboard */; };
 		89C1E2DB1FCC24A600196BA9 /* playkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C1E2DA1FCC24A600196BA9 /* playkingTests.swift */; };
 		89C1E2E61FCC24A600196BA9 /* playkingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C1E2E51FCC24A600196BA9 /* playkingUITests.swift */; };
+		89C942CB201B6C6400FF8CA4 /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C942CA201B6C6400FF8CA4 /* Keyword.swift */; };
+		89C942CC201B786D00FF8CA4 /* keywords.json in Resources */ = {isa = PBXBuildFile; fileRef = 89C942C9201B4F5700FF8CA4 /* keywords.json */; };
 		EC7BAC3F680CD29DD1C1C084 /* Pods_playkingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1564F33C628B794E0EBE0481 /* Pods_playkingUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,8 @@
 		89C1E2E11FCC24A600196BA9 /* playkingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = playkingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C1E2E51FCC24A600196BA9 /* playkingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playkingUITests.swift; sourceTree = "<group>"; };
 		89C1E2E71FCC24A600196BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89C942C9201B4F5700FF8CA4 /* keywords.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = keywords.json; sourceTree = "<group>"; };
+		89C942CA201B6C6400FF8CA4 /* Keyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Keyword.swift; path = playking/Model/Keyword.swift; sourceTree = SOURCE_ROOT; };
 		91463ADC60BE31802ADE12CE /* Pods-playking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-playking/Pods-playking.debug.xcconfig"; sourceTree = "<group>"; };
 		AF97BC6A59029305558A7A25 /* Pods-playking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playking.release.xcconfig"; path = "Pods/Target Support Files/Pods-playking/Pods-playking.release.xcconfig"; sourceTree = "<group>"; };
 		F7BBCC8D094EFD0970233A5A /* Pods-playkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playkingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-playkingTests/Pods-playkingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 		890950961FD57E95008B04B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				89C942CA201B6C6400FF8CA4 /* Keyword.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 		890950971FD57E9F008B04B6 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				89C942C8201B4D7100FF8CA4 /* data */,
 				890950981FD57EA5008B04B6 /* images */,
 				890950991FD57EB2008B04B6 /* sounds */,
 			);
@@ -223,6 +229,14 @@
 				89C1E2E51FCC24A600196BA9 /* playkingUITests.swift */,
 			);
 			path = playkingUITests;
+			sourceTree = "<group>";
+		};
+		89C942C8201B4D7100FF8CA4 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				89C942C9201B4F5700FF8CA4 /* keywords.json */,
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 		C38926EC97925EBE34EAD1EE /* Pods */ = {
@@ -354,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C942CC201B786D00FF8CA4 /* keywords.json in Resources */,
 				89C1E2D01FCC24A600196BA9 /* LaunchScreen.storyboard in Resources */,
 				89C1E2CD1FCC24A600196BA9 /* Assets.xcassets in Resources */,
 				89C1E2CB1FCC24A600196BA9 /* Main.storyboard in Resources */,
@@ -529,6 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89C1E2C61FCC24A600196BA9 /* AppDelegate.swift in Sources */,
+				89C942CB201B6C6400FF8CA4 /* Keyword.swift in Sources */,
 				8986E0471FF533DD00943A82 /* ActingController.swift in Sources */,
 				8909509D1FD57FD1008B04B6 /* Const.swift in Sources */,
 				8909509F1FD58084008B04B6 /* Util.swift in Sources */,

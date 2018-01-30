@@ -1,0 +1,81 @@
+{
+  "keywords": {
+    "When":[
+            {"name":"卒業式", "level": 1, "point": 3},
+            {"name":"誕生日", "level": 1, "point": 3},
+            {"name":"正月", "level": 1, "point": 3},
+            {"name":"結婚式", "level": 1, "point": 3},
+            {"name":"入学式", "level": 1, "point": 3},
+            {"name":"オーディション", "level": 1, "point": 3},
+            {"name":"母の日", "level": 1, "point": 3},
+            {"name":"クリスマス", "level": 1, "point": 3},
+            {"name":"夏休み", "level": 1, "point": 3},
+            {"name":"バレンタイン", "level": 1, "point": 3}
+            ],
+    
+    "Who":[
+           {"name":"親友", "level": 1, "point": 3},
+           {"name":"店員", "level": 1, "point": 3},
+           {"name":"夫婦", "level": 1, "point": 3},
+           {"name":"先輩", "level": 1, "point": 3},
+           {"name":"恋人", "level": 1, "point": 3},
+           {"name":"先生", "level": 1, "point": 3},
+           {"name":"上司", "level": 1, "point": 3},
+           {"name":"親", "level": 1, "point": 3},
+           {"name":"兄弟", "level": 1, "point": 3},
+           {"name":"犯人", "level": 1, "point": 3}
+           ],
+    
+    "Where":[
+             {"name":"交番", "level": 1, "point": 3},
+             {"name":"駅", "level": 1, "point": 3},
+             {"name":"会社", "level": 1, "point": 3},
+             {"name":"公演", "level": 1, "point": 3},
+             {"name":"ホテル", "level": 1, "point": 3},
+             {"name":"海岸", "level": 1, "point": 3},
+             {"name":"遊園地", "level": 1, "point": 3},
+             {"name":"教室", "level": 1, "point": 3},
+             {"name":"病院", "level": 1, "point": 3},
+             {"name":"居酒屋", "level": 1, "point": 3}
+             ],
+    
+    "What":[
+            {"name":"告白", "level": 1, "point": 3},
+            {"name":"出産", "level": 1, "point": 3},
+            {"name":"結婚", "level": 1, "point": 3},
+            {"name":"殺人", "level": 1, "point": 3},
+            {"name":"病気", "level": 1, "point": 3},
+            {"name":"事故", "level": 1, "point": 3},
+            {"name":"再開", "level": 1, "point": 3},
+            {"name":"失恋", "level": 1, "point": 3},
+            {"name":"病院", "level": 1, "point": 3},
+            {"name":"別れ", "level": 1, "point": 3}
+            ],
+    
+    "Will":[
+            {"name":"ハイタッチ", "level": 1, "point": 2},
+            {"name":"万歳", "level": 1, "point": 2},
+            {"name":"頭を下げる", "level": 1, "point": 2},
+            {"name":"指を鳴らす", "level": 1, "point": 2},
+            {"name":"指切り", "level": 1, "point": 2},
+            {"name":"握手", "level": 1, "point": 2},
+            {"name":"拍手", "level": 1, "point": 2},
+            {"name":"ハグ", "level": 1, "point": 2},
+            {"name":"撫でる", "level": 1, "point": 2},
+            {"name":"寝る", "level": 1, "point": 2}
+            ],
+    
+    "Theme":[
+             {"name":"男と女", "level": 1, "point": 5},
+             {"name":"男と女", "level": 1, "point": 5},
+             {"name":"男と女", "level": 1, "point": 5},
+             {"name":"男と女", "level": 1, "point": 5},
+             {"name":"男と女", "level": 1, "point": 5},
+             {"name":"出会いと別れ", "level": 1, "point": 5},
+             {"name":"出会いと別れ", "level": 1, "point": 5},
+             {"name":"出会いと別れ", "level": 1, "point": 5},
+             {"name":"出会いと別れ", "level": 1, "point": 5},
+             {"name":"出会いと別れ", "level": 1, "point": 5}
+             ]
+  }
+}
