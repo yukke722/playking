@@ -12,8 +12,8 @@
 		8909509D1FD57FD1008B04B6 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909509C1FD57FD1008B04B6 /* Const.swift */; };
 		8909509F1FD58084008B04B6 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909509E1FD58084008B04B6 /* Util.swift */; };
 		891B8963202B104600DDE1F7 /* test01.mov in Resources */ = {isa = PBXBuildFile; fileRef = 891B8962202B104600DDE1F7 /* test01.mov */; };
-		8986E0451FF52B8400943A82 /* WChoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986E0441FF52B8400943A82 /* WChoiceController.swift */; };
-		8986E0471FF533DD00943A82 /* ActingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986E0461FF533DD00943A82 /* ActingController.swift */; };
+		8986E0451FF52B8400943A82 /* WChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986E0441FF52B8400943A82 /* WChoiceViewController.swift */; };
+		8986E0471FF533DD00943A82 /* ActingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986E0461FF533DD00943A82 /* ActingViewController.swift */; };
 		89C1E2C61FCC24A600196BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C1E2C51FCC24A600196BA9 /* AppDelegate.swift */; };
 		89C1E2CB1FCC24A600196BA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C1E2C91FCC24A600196BA9 /* Main.storyboard */; };
 		89C1E2CD1FCC24A600196BA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C1E2CC1FCC24A600196BA9 /* Assets.xcassets */; };
@@ -51,8 +51,8 @@
 		8909509C1FD57FD1008B04B6 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		8909509E1FD58084008B04B6 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		891B8962202B104600DDE1F7 /* test01.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = test01.mov; sourceTree = "<group>"; };
-		8986E0441FF52B8400943A82 /* WChoiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WChoiceController.swift; sourceTree = "<group>"; };
-		8986E0461FF533DD00943A82 /* ActingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActingController.swift; sourceTree = "<group>"; };
+		8986E0441FF52B8400943A82 /* WChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WChoiceViewController.swift; sourceTree = "<group>"; };
+		8986E0461FF533DD00943A82 /* ActingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActingViewController.swift; sourceTree = "<group>"; };
 		89C1E2C21FCC24A600196BA9 /* playking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C1E2C51FCC24A600196BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89C1E2CA1FCC24A600196BA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -114,8 +114,8 @@
 		890950941FD57E71008B04B6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8986E0461FF533DD00943A82 /* ActingController.swift */,
-				8986E0441FF52B8400943A82 /* WChoiceController.swift */,
+				8986E0461FF533DD00943A82 /* ActingViewController.swift */,
+				8986E0441FF52B8400943A82 /* WChoiceViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -557,10 +557,10 @@
 			files = (
 				89C1E2C61FCC24A600196BA9 /* AppDelegate.swift in Sources */,
 				89C942CB201B6C6400FF8CA4 /* Keyword.swift in Sources */,
-				8986E0471FF533DD00943A82 /* ActingController.swift in Sources */,
+				8986E0471FF533DD00943A82 /* ActingViewController.swift in Sources */,
 				8909509D1FD57FD1008B04B6 /* Const.swift in Sources */,
 				8909509F1FD58084008B04B6 /* Util.swift in Sources */,
-				8986E0451FF52B8400943A82 /* WChoiceController.swift in Sources */,
+				8986E0451FF52B8400943A82 /* WChoiceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

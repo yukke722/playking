@@ -11,7 +11,7 @@ import AVFoundation
 import AssetsLibrary
 import Photos
 
-class ActingController: UIViewController, AVCaptureFileOutputRecordingDelegate {
+class ActingViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
   
   /* 画面共通 */
   let scWid: CGFloat = UIScreen.main.bounds.width
@@ -33,16 +33,11 @@ class ActingController: UIViewController, AVCaptureFileOutputRecordingDelegate {
   var timer : Timer!
   var timeLabel: UILabel! // タイマー表示
   var startTime:Double = 0.0 // 開始時刻
-  
-  // 画面を横固定
-//  override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-//    get {
-//      return .landscapeLeft
-//    }
-//  }
+  var keyword = [String: String]() // keyword
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    print(keyword)
     
     if (false) { // simulater
       /* 動画撮影 */
@@ -64,7 +59,7 @@ class ActingController: UIViewController, AVCaptureFileOutputRecordingDelegate {
       
       // 動画を表示するレイヤーを生成
       myVideoLayer = AVCaptureVideoPreviewLayer.init(session: session)
-      myVideoLayer?.frame = self.view.bounds
+      myVideoLayer?.frame = self.view.bounds // layerのサイズを変更できる？
       myVideoLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
       self.view.layer.addSublayer(myVideoLayer!) // Viewに追加
       
@@ -85,7 +80,7 @@ class ActingController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     button.setTitle("START", for: .normal)
     button.layer.cornerRadius = 20.0
     button.layer.position = CGPoint(x: scWid/2, y: scHei-50)
-    button.addTarget(self, action: #selector(ActingController.onTapButton), for: .touchUpInside)
+    button.addTarget(self, action: #selector(ActingViewController.onTapButton), for: .touchUpInside)
     self.view.addSubview(button)
     
     // タイマーラベル作成
@@ -280,7 +275,7 @@ class ActingController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     timer = Timer.scheduledTimer(
       timeInterval: 1.0,
       target: self,
-      selector: #selector(ActingController.updateLabel),
+      selector: #selector(ActingViewController.updateLabel),
       userInfo: nil,
       repeats: true
     )

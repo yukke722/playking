@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class WChoiceController: UIViewController {
+class WChoiceViewController: UIViewController {
   
   let whens: [String] = ["卒業式", "誕生日", "正月"]
   let whos: [String] = ["親友", "店員", "夫婦"]
@@ -93,8 +93,17 @@ class WChoiceController: UIViewController {
     //      let keywords = try! jsonDecoder.decode(Keyword.self, from: jsonData)
     //      print(keywords)
     //
-    print(keyword)
+//    print(keyword)
     //    }
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    if segue.identifier == "actingVC" {
+      let actingController:ActingViewController = segue.destination as! ActingViewController
+      actingController.keyword = self.keyword
+    }
+    
   }
   
 }
