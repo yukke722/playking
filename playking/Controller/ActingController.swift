@@ -34,38 +34,49 @@ class ActingController: UIViewController, AVCaptureFileOutputRecordingDelegate {
   var timeLabel: UILabel! // タイマー表示
   var startTime:Double = 0.0 // 開始時刻
   
+  // 画面を横固定
+//  override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//    get {
+//      return .landscapeLeft
+//    }
+//  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    /* 動画撮影 */
-    let session = AVCaptureSession() // セッションの作成
-    let myImageOutput = AVCapturePhotoOutput() // 出力先の生成
-    
-    let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back) // バックカメラの取得
-    let videoInput = try! AVCaptureDeviceInput.init(device: camera!)
-    session.addInput(videoInput) // ビデオをセッションのInputに追加
-    
-    let mic = AVCaptureDevice.default(.builtInMicrophone, for: AVMediaType.audio, position: .unspecified) // マイク取得
-    let audioInput = try! AVCaptureDeviceInput.init(device: mic!)
-    session.addInput(audioInput) // オーディオをセッションに追加
-    
-    session.addOutput(myImageOutput) // セッションに追加
-    myVideoOutput = AVCaptureMovieFileOutput() // 動画の保存
-    session.addOutput(myVideoOutput) // ビデオ出力をOutputに追加
-    
-    // 動画を表示するレイヤーを生成
-    myVideoLayer = AVCaptureVideoPreviewLayer.init(session: session)
-    myVideoLayer?.frame = self.view.bounds
-    myVideoLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-    self.view.layer.addSublayer(myVideoLayer!) // Viewに追加
-    
-    /* レイヤーを削除
-     * https://goo.gl/K7Y8s2
-     */
-    
-    
-    // セッション開始.
-    session.startRunning()
+    if (false) { // simulater
+      /* 動画撮影 */
+      let session = AVCaptureSession() // セッションの作成
+      let myImageOutput = AVCapturePhotoOutput() // 出力先の生成
+      
+      let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back) // バックカメラの取得
+      print(camera)
+      let videoInput = try! AVCaptureDeviceInput.init(device: camera!)
+      session.addInput(videoInput) // ビデオをセッションのInputに追加
+      
+      let mic = AVCaptureDevice.default(.builtInMicrophone, for: AVMediaType.audio, position: .unspecified) // マイク取得
+      let audioInput = try! AVCaptureDeviceInput.init(device: mic!)
+      session.addInput(audioInput) // オーディオをセッションに追加
+      
+      session.addOutput(myImageOutput) // セッションに追加
+      myVideoOutput = AVCaptureMovieFileOutput() // 動画の保存
+      session.addOutput(myVideoOutput) // ビデオ出力をOutputに追加
+      
+      // 動画を表示するレイヤーを生成
+      myVideoLayer = AVCaptureVideoPreviewLayer.init(session: session)
+      myVideoLayer?.frame = self.view.bounds
+      myVideoLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+      self.view.layer.addSublayer(myVideoLayer!) // Viewに追加
+      
+      /* レイヤーを削除
+       * https://goo.gl/K7Y8s2
+       */
+      
+      
+      // セッション開始.
+      session.startRunning()
+      
+    } // simulater
     
     // ボタン作成
     button = UIButton(frame: CGRect(x: 0, y: 0, width: 120, height: 50))
@@ -290,7 +301,7 @@ class ActingController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     if count == 0 {
       stopTimer()
     }
-
+    
   }
   
   func stopTimer() {
