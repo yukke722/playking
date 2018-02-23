@@ -14,6 +14,7 @@
 		891B8963202B104600DDE1F7 /* test01.mov in Resources */ = {isa = PBXBuildFile; fileRef = 891B8962202B104600DDE1F7 /* test01.mov */; };
 		8986E0451FF52B8400943A82 /* WChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986E0441FF52B8400943A82 /* WChoiceViewController.swift */; };
 		8986E0471FF533DD00943A82 /* ActingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986E0461FF533DD00943A82 /* ActingViewController.swift */; };
+		8997A824203819DC008E944D /* n46.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8997A823203819DC008E944D /* n46.mp3 */; };
 		89C1E2C61FCC24A600196BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C1E2C51FCC24A600196BA9 /* AppDelegate.swift */; };
 		89C1E2CB1FCC24A600196BA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C1E2C91FCC24A600196BA9 /* Main.storyboard */; };
 		89C1E2CD1FCC24A600196BA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C1E2CC1FCC24A600196BA9 /* Assets.xcassets */; };
@@ -22,6 +23,8 @@
 		89C1E2E61FCC24A600196BA9 /* playkingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C1E2E51FCC24A600196BA9 /* playkingUITests.swift */; };
 		89C942CB201B6C6400FF8CA4 /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C942CA201B6C6400FF8CA4 /* Keyword.swift */; };
 		89C942CC201B786D00FF8CA4 /* keywords.json in Resources */ = {isa = PBXBuildFile; fileRef = 89C942C9201B4F5700FF8CA4 /* keywords.json */; };
+		89DB90B1203EDFCC0076A78E /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DB90B0203EDFCC0076A78E /* AnswerButton.swift */; };
+		89DB90B6203EF39D0076A78E /* UIColor+colorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DB90B5203EF39D0076A78E /* UIColor+colorList.swift */; };
 		EC7BAC3F680CD29DD1C1C084 /* Pods_playkingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1564F33C628B794E0EBE0481 /* Pods_playkingUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +56,7 @@
 		891B8962202B104600DDE1F7 /* test01.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = test01.mov; sourceTree = "<group>"; };
 		8986E0441FF52B8400943A82 /* WChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WChoiceViewController.swift; sourceTree = "<group>"; };
 		8986E0461FF533DD00943A82 /* ActingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActingViewController.swift; sourceTree = "<group>"; };
+		8997A823203819DC008E944D /* n46.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = n46.mp3; sourceTree = "<group>"; };
 		89C1E2C21FCC24A600196BA9 /* playking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C1E2C51FCC24A600196BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89C1E2CA1FCC24A600196BA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 		89C1E2E71FCC24A600196BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89C942C9201B4F5700FF8CA4 /* keywords.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = keywords.json; sourceTree = "<group>"; };
 		89C942CA201B6C6400FF8CA4 /* Keyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Keyword.swift; path = playking/Model/Keyword.swift; sourceTree = SOURCE_ROOT; };
+		89DB90B0203EDFCC0076A78E /* AnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
+		89DB90B5203EF39D0076A78E /* UIColor+colorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colorList.swift"; sourceTree = "<group>"; };
 		91463ADC60BE31802ADE12CE /* Pods-playking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-playking/Pods-playking.debug.xcconfig"; sourceTree = "<group>"; };
 		AF97BC6A59029305558A7A25 /* Pods-playking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playking.release.xcconfig"; path = "Pods/Target Support Files/Pods-playking/Pods-playking.release.xcconfig"; sourceTree = "<group>"; };
 		F7BBCC8D094EFD0970233A5A /* Pods-playkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playkingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-playkingTests/Pods-playkingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,17 +126,11 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		890950951FD57E84008B04B6 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		890950961FD57E95008B04B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				89C942CA201B6C6400FF8CA4 /* Keyword.swift */,
+				89DB90B0203EDFCC0076A78E /* AnswerButton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -138,10 +138,10 @@
 		890950971FD57E9F008B04B6 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				8997A822203819A0008E944D /* sounds */,
 				891B895D202B0BD200DDE1F7 /* movies */,
 				89C942C8201B4D7100FF8CA4 /* data */,
 				890950981FD57EA5008B04B6 /* images */,
-				890950991FD57EB2008B04B6 /* sounds */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -151,13 +151,6 @@
 			children = (
 			);
 			path = images;
-			sourceTree = "<group>";
-		};
-		890950991FD57EB2008B04B6 /* sounds */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = sounds;
 			sourceTree = "<group>";
 		};
 		8909509A1FD57EC3008B04B6 /* Util */ = {
@@ -186,6 +179,14 @@
 			path = movies;
 			sourceTree = "<group>";
 		};
+		8997A822203819A0008E944D /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				8997A823203819DC008E944D /* n46.mp3 */,
+			);
+			path = sounds;
+			sourceTree = "<group>";
+		};
 		89C1E2B91FCC24A600196BA9 = {
 			isa = PBXGroup;
 			children = (
@@ -211,8 +212,8 @@
 		89C1E2C41FCC24A600196BA9 /* playking */ = {
 			isa = PBXGroup;
 			children = (
+				89DB90B4203EF32E0076A78E /* Extension */,
 				890950941FD57E71008B04B6 /* Controller */,
-				890950951FD57E84008B04B6 /* Extension */,
 				890950961FD57E95008B04B6 /* Model */,
 				890950971FD57E9F008B04B6 /* Resource */,
 				8909509A1FD57EC3008B04B6 /* Util */,
@@ -248,6 +249,14 @@
 				89C942C9201B4F5700FF8CA4 /* keywords.json */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		89DB90B4203EF32E0076A78E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				89DB90B5203EF39D0076A78E /* UIColor+colorList.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		C38926EC97925EBE34EAD1EE /* Pods */ = {
@@ -382,6 +391,7 @@
 				89C942CC201B786D00FF8CA4 /* keywords.json in Resources */,
 				89C1E2D01FCC24A600196BA9 /* LaunchScreen.storyboard in Resources */,
 				89C1E2CD1FCC24A600196BA9 /* Assets.xcassets in Resources */,
+				8997A824203819DC008E944D /* n46.mp3 in Resources */,
 				891B8963202B104600DDE1F7 /* test01.mov in Resources */,
 				89C1E2CB1FCC24A600196BA9 /* Main.storyboard in Resources */,
 			);
@@ -559,6 +569,8 @@
 				89C942CB201B6C6400FF8CA4 /* Keyword.swift in Sources */,
 				8986E0471FF533DD00943A82 /* ActingViewController.swift in Sources */,
 				8909509D1FD57FD1008B04B6 /* Const.swift in Sources */,
+				89DB90B1203EDFCC0076A78E /* AnswerButton.swift in Sources */,
+				89DB90B6203EF39D0076A78E /* UIColor+colorList.swift in Sources */,
 				8909509F1FD58084008B04B6 /* Util.swift in Sources */,
 				8986E0451FF52B8400943A82 /* WChoiceViewController.swift in Sources */,
 			);
