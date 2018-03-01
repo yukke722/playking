@@ -28,12 +28,13 @@ class AnswerButton: UIButton {
     self.color = color
     
     self.setTitle(label, for: .normal)
-    self.backgroundColor = .white
+    self.backgroundColor = .gray
     self.setTitleColor(color, for: .normal)
     self.layer.borderColor = color.cgColor
     self.layer.masksToBounds = true
     self.layer.cornerRadius = 20.0
     self.layer.position = position
+    self.isEnabled = false
     
     selectView = UIView(frame: self.bounds)
     selectView.backgroundColor = UIColor.black

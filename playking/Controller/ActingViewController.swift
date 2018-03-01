@@ -42,10 +42,23 @@ class ActingViewController: UIViewController, AVCaptureFileOutputRecordingDelega
   /* ボタン */
   var whenBtn, whereBtn, whoBtn, whatBtn, willBtn: AnswerButton!
   
+//  // 画面の自動回転をさせない
+//  override var shouldAutorotate: Bool {
+//    get {
+//      return false
+//    }
+//  }
+//
+//  // 画面をPortraitに指定する
+//  override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//    get {
+//      return .landscapeRight
+//    }
+//  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     print(keyword)
-    playSound(musicType: "n46") // BGM再生
     
     if (true) { // simulater
       /* 動画撮影 */
@@ -68,24 +81,10 @@ class ActingViewController: UIViewController, AVCaptureFileOutputRecordingDelega
       
       // 動画を表示するレイヤーを生成
       myVideoLayer = AVCaptureVideoPreviewLayer.init(session: session)
-//      //      myVideoLayer?.frame = self.previewView.bounds // layerのサイズを変更できる？
-//      myVideoLayer?.frame = CGRect(x: 0.0,
-//                                   y: 0.0,
-//                                   width: self.view.bounds.width * 1.0,
-//                                   height: self.view.bounds.height * 1.0
-//      )
       myVideoLayer?.frame = self.view.bounds // layerのサイズを変更できる？
       myVideoLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-      myVideoLayer?.connection?.videoOrientation = .landscapeRight
-      
-//      self.previewView.layer.addSublayer(myVideoLayer!)
-//      self.view.addSubview(previewView)
-      
+      myVideoLayer?.connection?.videoOrientation = .landscapeRight // 横向き
       self.view.layer.addSublayer(myVideoLayer!) // Viewに追加
-      
-      /* レイヤーを削除
-       * https://goo.gl/K7Y8s2
-       */
       
       
       // セッション開始.
@@ -116,41 +115,41 @@ class ActingViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     
     // WHENボタン作成
     whenBtn = AnswerButton(frame: cardFrame,
-                               color: UIColor.card.typeWhen,
-                               label: keyword["when"]!,
-                               position: CGPoint(x: 100, y: scHei-60)
-                               )
+                           color: UIColor.card.typeWhen,
+                           label: keyword["when"]!,
+                           position: CGPoint(x: 100, y: scHei-60)
+    )
     self.view.addSubview(whenBtn)
     
     // WHEREボタン作成
     whereBtn = AnswerButton(frame: cardFrame,
-                               color: UIColor.card.typeWhere,
-                               label: keyword["where"]!,
-                               position: CGPoint(x: 300, y: scHei-60)
+                            color: UIColor.card.typeWhere,
+                            label: keyword["where"]!,
+                            position: CGPoint(x: 300, y: scHei-60)
     )
     self.view.addSubview(whereBtn)
     
     // WHOボタン作成
     whoBtn = AnswerButton(frame: cardFrame,
-                                color: UIColor.card.typeWho,
-                                label: keyword["who"]!,
-                                position: CGPoint(x: 500, y: scHei-60)
+                          color: UIColor.card.typeWho,
+                          label: keyword["who"]!,
+                          position: CGPoint(x: 500, y: scHei-60)
     )
     self.view.addSubview(whoBtn)
     
     // WHATボタン作成
     whatBtn = AnswerButton(frame: cardFrame,
-                              color: UIColor.card.typeWhat,
-                              label: keyword["what"]!,
-                              position: CGPoint(x: 700, y: scHei-60)
+                           color: UIColor.card.typeWhat,
+                           label: keyword["what"]!,
+                           position: CGPoint(x: 700, y: scHei-60)
     )
     self.view.addSubview(whatBtn)
     
     // WILLボタン作成
     willBtn = AnswerButton(frame: cardFrame,
-                              color: UIColor.card.typeWill,
-                              label: keyword["will"]!,
-                              position: CGPoint(x: 900, y: scHei-60)
+                           color: UIColor.card.typeWill,
+                           label: keyword["will"]!,
+                           position: CGPoint(x: 900, y: scHei-60)
     )
     willBtn.isEnabled = false
     self.view.addSubview(willBtn)
@@ -185,6 +184,7 @@ class ActingViewController: UIViewController, AVCaptureFileOutputRecordingDelega
                   error: Error?) {
     
     print("start fileOutput")
+    
     
     
     
@@ -231,10 +231,10 @@ class ActingViewController: UIViewController, AVCaptureFileOutputRecordingDelega
       
       
       // ビデオを横方向に変換
-      //      if myVideoLayer.connection?.videoOrientation == .portrait {
-      //        isPortrait = true
-      //        videoSize = CGSize(width: videoSize.height, height: videoSize.width)
-      //      }
+      if myVideoLayer.connection?.videoOrientation == .portrait {
+        isPortrait = true
+        videoSize = CGSize(width: videoSize.height, height: videoSize.width)
+      }
       
       print("height: \(videoSize.height), width: \(videoSize.width)")
       print(isPortrait)
@@ -250,83 +250,85 @@ class ActingViewController: UIViewController, AVCaptureFileOutputRecordingDelega
       //    logoLayer.opacity = 0.9
       
       // 親レイヤーを作成
-      //      let parentLayer: CALayer = CALayer()
-      //      let videoLayer: CALayer = CALayer()
-      //      parentLayer.frame = CGRect(x: 0, y: 0, width: videoSize.width, height: videoSize.height)
-      //      videoLayer.frame = CGRect(x: 0, y: 0, width: videoSize.width, height: videoSize.height)
-      //      parentLayer.addSublayer(videoLayer)
-      //      parentLayer.addSublayer(logoLayer)
-      //      parentLayer.addSublayer(timeLabel.layer)
+      let parentLayer: CALayer = CALayer()
+      let videoLayer: CALayer = CALayer()
+      parentLayer.frame = CGRect(x: 0, y: 0, width: videoSize.width, height: videoSize.height)
+      videoLayer.frame = CGRect(x: 0, y: 0, width: videoSize.width, height: videoSize.height)
+      parentLayer.addSublayer(videoLayer)
+      //            parentLayer.addSublayer(logoLayer)
+      //            parentLayer.addSublayer(timeLabel.layer)
       
       // 合成用コンポジション作成
-      //      var videoComp: AVMutableVideoComposition = AVMutableVideoComposition()
-      //      videoComp.renderSize = videoSize
-      //      videoComp.frameDuration = CMTimeMake(1, 30)
-      //      videoComp.animationTool = AVVideoCompositionCoreAnimationTool.init(postProcessingAsVideoLayer: videoLayer, in: parentLayer)
+      let videoComp: AVMutableVideoComposition = AVMutableVideoComposition()
+      videoComp.renderSize = videoSize
+      videoComp.frameDuration = CMTimeMake(1, 30)
+      videoComp.animationTool = AVVideoCompositionCoreAnimationTool.init(postProcessingAsVideoLayer: videoLayer, in: parentLayer)
       
       // インストラクション作成
-      //      var instruction: AVMutableVideoCompositionInstruction = AVMutableVideoCompositionInstruction()
-      //      instruction.timeRange = CMTimeRangeMake(kCMTimeZero, mixComposition.duration)
-      //      var layerInstruction: AVMutableVideoCompositionLayerInstruction = AVMutableVideoCompositionLayerInstruction.init(assetTrack: videoTrack)
-      //      instruction.layerInstructions = [layerInstruction]
+      let instruction: AVMutableVideoCompositionInstruction = AVMutableVideoCompositionInstruction()
+      instruction.timeRange = CMTimeRangeMake(kCMTimeZero, mixComposition.duration)
+      let layerInstruction: AVMutableVideoCompositionLayerInstruction = AVMutableVideoCompositionLayerInstruction.init(assetTrack: videoTrack)
+      instruction.layerInstructions = [layerInstruction]
       
       // 縦方向で撮影なら90度回転させる
-      //      if isPortrait {
-      //        let FirstAssetScaleFactor:CGAffineTransform = CGAffineTransform(scaleX: 1.0, y: 1.0);
-      //        layerInstruction.setTransform(videoTrack.preferredTransform.concatenating(FirstAssetScaleFactor), at: kCMTimeZero)
-      //      }
+      if isPortrait {
+        let FirstAssetScaleFactor:CGAffineTransform = CGAffineTransform(scaleX: 1.0, y: 1.0);
+        layerInstruction.setTransform(videoTrack.preferredTransform.concatenating(FirstAssetScaleFactor), at: kCMTimeZero)
+      }
       
       // インストラクションを合成用コンポジションに設定
-      //            videoComp.instructions = [instruction]
-    } // {}の範囲と１ファイルにまとめることが課題
-    
-    // 動画のコンポジションをベースにAVAssetExportを生成
-    let assetExport = AVAssetExportSession.init(asset: mixComposition, presetName: AVAssetExportPresetMediumQuality)
-    // 合成用コンポジションを設定
-    //    assetExport?.videoComposition = videoComp
-    
-    // エクスポートファイルの設定
-    let videoName: String = "test.mov" // ユーザーに入力させる
-    let documentPath: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-    let exportPath: String = documentPath + "/" + videoName
-    let exportUrl: URL = URL(fileURLWithPath: exportPath)
-    assetExport?.outputFileType = AVFileType.mov
-    assetExport?.outputURL = exportUrl
-    assetExport?.shouldOptimizeForNetworkUse = true
-    
-    
-    // ファイルが存在している場合は削除
-    if FileManager.default.fileExists(atPath: exportPath) {
-      try! FileManager.default.removeItem(atPath: exportPath)
-    }
-    
-    // エクスポート実行
-    assetExport?.exportAsynchronously(completionHandler: {() -> Void in
+      videoComp.instructions = [instruction]
+      //    } // {}の範囲と１ファイルにまとめることが課題
       
-      // 端末に保存
-      PHPhotoLibrary.shared().performChanges({
-        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: exportUrl)
-      }, completionHandler: {(success, err) -> Void in
-        var message = ""
-        if success {
-          message = "保存しました"
-        } else {
-          message = "保存に失敗しました"
-        }
+      // 動画のコンポジションをベースにAVAssetExportを生成
+      let assetExport = AVAssetExportSession.init(asset: mixComposition, presetName: AVAssetExportPresetMediumQuality)
+      // 合成用コンポジションを設定
+      assetExport?.videoComposition = videoComp
+      
+      
+      // エクスポートファイルの設定
+      let videoName: String = "test.mov" // ユーザーに入力させる
+      let documentPath: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+      let exportPath: String = documentPath + "/" + videoName
+      let exportUrl: URL = URL(fileURLWithPath: exportPath)
+      assetExport?.outputFileType = AVFileType.mov
+      assetExport?.outputURL = exportUrl
+      assetExport?.shouldOptimizeForNetworkUse = true
+      
+      
+      // ファイルが存在している場合は削除
+      if FileManager.default.fileExists(atPath: exportPath) {
+        try! FileManager.default.removeItem(atPath: exportPath)
+      }
+      
+      // エクスポート実行
+      assetExport?.exportAsynchronously(completionHandler: {() -> Void in
         
-        // アラートを表示
-        DispatchQueue.main.async(execute: {
-          let alert = UIAlertController.init(title: "保存", message: message, preferredStyle: UIAlertControllerStyle.alert)
-          let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){ (action: UIAlertAction) in
-            self.button.setTitle("START", for: .normal)
-            self.button.isEnabled = true
-            self.button.isHidden = false
+        // 端末に保存
+        PHPhotoLibrary.shared().performChanges({
+          PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: exportUrl)
+        }, completionHandler: {(success, err) -> Void in
+          var message = ""
+          if success {
+            message = "保存しました"
+          } else {
+            message = "保存に失敗しました"
           }
-          alert.addAction(action)
-          self.present(alert, animated: true, completion: nil)
-        });
+          
+          // アラートを表示
+          DispatchQueue.main.async(execute: {
+            let alert = UIAlertController.init(title: "保存", message: message, preferredStyle: UIAlertControllerStyle.alert)
+            let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){ (action: UIAlertAction) in
+              self.button.setTitle("START", for: .normal)
+              self.button.isEnabled = true
+              self.button.isHidden = false
+            }
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+          });
+        })
       })
-    })
+    }
   }
   
   override func didReceiveMemoryWarning() {
@@ -345,6 +347,17 @@ class ActingViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     let str = String(format: "%02d:%02d", minuteCount, secondCount)
     timeLabel.text = str
     print("str: \(str)")
+    
+    // ボタンをタップ可能にする
+    whenBtn.isEnabled = true
+    whenBtn.backgroundColor = .white
+    whereBtn.isEnabled = true
+    whereBtn.backgroundColor = .white
+    whoBtn.isEnabled = true
+    whoBtn.backgroundColor = .white
+    whatBtn.isEnabled = true
+    whatBtn.backgroundColor = .white
+    
     
     timer = Timer.scheduledTimer(
       timeInterval: 1.0,
@@ -370,6 +383,7 @@ class ActingViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     switch count {
     case 30:
       self.willBtn.isEnabled = true
+      self.willBtn.backgroundColor = .white
     case 0:
       stopTimer()
     default:
@@ -379,6 +393,8 @@ class ActingViewController: UIViewController, AVCaptureFileOutputRecordingDelega
   
   func stopTimer() {
     print("stop timer")
+    audioPlayerInstance.stop()
+    
     timer.invalidate()
     //      let alert = UIAlertController(title: "完了", message: "経ちました。", preferredStyle: .alert)
     //      let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -406,7 +422,6 @@ class ActingViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     
     audioPlayerInstance.volume = 1.0 // volume調整 0~1
     audioPlayerInstance.play()
-    print("playSound")
   }
   
 }
